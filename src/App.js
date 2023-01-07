@@ -1,6 +1,5 @@
 import "./App.css";
 import Hero from "./component/Hero";
-import Table from "./component/Table";
 
 const App = () => {
   return (
