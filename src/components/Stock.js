@@ -18,15 +18,25 @@ class App extends Component {
           })
             .then(function (data) {
               // eslint-disable-next-line
-              data.map((d) => {
-                //   console.log(new Date(d.date).getTime())
-                const date = new Date(d.date);
-                const yData = [d.open, d.low, d.high, d.close];
+              // data.map((d) => {
+              //   //   console.log(new Date(d.date).getTime())
+              //   const date = new Date(d.date);
+              //   const yData = [d.open, d.low, d.high, d.close];
+              //   FinalArray.push({
+              //     x: date,
+              //     y: yData,
+              //   });
+              // });
+
+              for (let i = 0; i < 20; i++) {
+                const date = new Date(data[i].date)
+                console.log(date);
+                const yData = [data[i].open, data[i].low, data[i].high, data[i].close];
                 FinalArray.push({
                   x: date,
                   y: yData,
                 });
-              });
+              }
               chart.render();
             });
         console.log("FINAL", FinalArray);
